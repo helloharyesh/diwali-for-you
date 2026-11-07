@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Diwali, my love</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16032e;--deep:#2e0f5c;--vio:#6d28d9;--lav:#c4b5fd;--lil:#f0abfc;--sun:#ffc83d;--cream:#fff7e6;
+--serif:'Playfair Display',Georgia,serif;--sans:'Poppins',system-ui,sans-serif;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,var(--deep),var(--ink) 70%);color:var(--cream);font-family:var(--sans);-webkit-tap-highlight-color:transparent}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.slide{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 28px) 24px calc(env(safe-area-inset-bottom,0px) + 84px);opacity:0;visibility:hidden;transform:scale(.97);transition:opacity .7s,transform .7s,visibility .7s;overflow-y:auto}
+.slide.on{opacity:1;visibility:visible;transform:none}
+.slide>*{max-width:560px;width:100%}
+.rv{opacity:0}.on .rv{animation:rv 1s both;animation-delay:var(--d,.2s)}
+@keyframes rv{from{opacity:0;filter:blur(8px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
+h1,h2{font-family:var(--serif);font-weight:600;margin:.2em 0;line-height:1.1}
+h1{font-size:clamp(3rem,16vw,6rem);background:linear-gradient(100deg,var(--sun),var(--lil) 55%,var(--lav));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 40px rgba(255,200,61,.25)}
+h2{font-size:clamp(1.8rem,7.5vw,2.8rem);color:var(--sun)}
+p{font-weight:300;font-size:clamp(1rem,4.3vw,1.18rem);line-height:1.75;margin:.7em 0;color:#f3e8ff}
+em{font-family:var(--serif);color:var(--lil)}
+.sm{font-size:.95rem;letter-spacing:.04em;color:var(--lav)}
+.btn{font:500 1rem var(--sans);color:var(--ink);background:linear-gradient(120deg,var(--sun),#ffe08a);border:0;border-radius:99px;padding:14px 30px;margin-top:18px;cursor:pointer;box-shadow:0 0 30px rgba(255,200,61,.45);transition:transform .2s}
+.btn:active{transform:scale(.95)}.btn:focus-visible,.nav button:focus-visible{outline:2px solid var(--lil);outline-offset:3px}
+.fl{width:clamp(96px,28vw,150px);height:auto;filter:drop-shadow(0 0 18px rgba(255,200,61,.4));animation:sway 6s ease-in-out infinite}
+.fl.lily{filter:drop-shadow(0 0 18px rgba(196,181,253,.6))}
+@keyframes sway{50%{transform:rotate(7deg) scale(1.05)}}
+.row{display:flex;justify-content:center;gap:18px;align-items:center}
+.deco{position:absolute;opacity:.9;pointer-events:none}.deco .fl{width:clamp(70px,20vw,120px)}
+.d1{left:-14px;top:12%}.d2{right:-14px;bottom:18%}.d3{right:-10px;top:10%}.d4{left:-10px;bottom:20%}
+.cards{display:grid;gap:14px;margin-top:10px}
+.card{background:linear-gradient(135deg,rgba(109,40,217,.35),rgba(240,171,252,.12));border:1px solid rgba(196,181,253,.3);border-radius:22px;padding:16px 20px;text-align:left;backdrop-filter:blur(6px)}
+.card b{font-family:var(--serif);font-size:1.25rem;color:var(--sun);font-weight:600}
+.card p{margin:.3em 0 0;font-size:1rem;line-height:1.6}
+.frame{position:relative;width:100%;aspect-ratio:4/5;max-height:62vh;border-radius:26px;overflow:hidden;border:1px solid rgba(196,181,253,.4);box-shadow:0 0 60px rgba(109,40,217,.55)}
+@media(min-width:700px){.frame{aspect-ratio:16/10}.slide>*{max-width:640px}}
+#film{width:100%;height:100%;display:block}
+.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(22,3,46,.55);transition:opacity .5s}
+.ov.h{opacity:0;pointer-events:none}.ov .btn{margin:0}
+.sign{font-family:var(--serif);font-style:italic;font-size:1.7rem;color:var(--sun);margin-top:14px}
+.nav{position:fixed;z-index:5;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 16px calc(env(safe-area-inset-bottom,0px) + 14px)}
+.nav button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(196,181,253,.5);background:rgba(46,15,92,.7);color:var(--cream);font-size:1.2rem;cursor:pointer}
+.dots{display:flex;gap:9px}.dots i{width:9px;height:9px;border-radius:9px;background:rgba(196,181,253,.35);transition:.4s}.dots i.on{width:26px;background:var(--sun)}
+@media(prefers-reduced-motion:reduce){.fl{animation:none}.rv{animation:none!important;opacity:1}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<section class="slide on">
+  <div class="deco d1" data-f="s"></div><div class="deco d2" data-f="l"></div>
+  <p class="sm rv" style="--d:.2s">Shubh Deepawali</p>
+  <h1 class="rv" style="--d:.6s">Happy Diwali</h1>
+  <h2 class="rv" style="--d:1.1s">to the light of my life,<br><span data-name></span></h2>
+  <p class="rv" style="--d:1.6s">I made this little world of lights, flowers and fireworks just for you.</p>
+  <div class="row rv" style="--d:2s"><span data-f="s"></span><span data-f="l"></span><span data-f="s"></span></div>
+  <button class="btn rv" style="--d:2.4s" onclick="go(1)">Open your surprise ✨</button>
+</section>
+
+<section class="slide">
+  <div class="deco d3" data-f="l"></div><div class="deco d4" data-f="s"></div>
+  <h2 class="rv">Before the lamps are lit…</h2>
+  <p class="rv" style="--d:.7s">Every diya tonight pushes back a little darkness. But long before today, you were the one who made my ordinary days glow.</p>
+  <p class="rv" style="--d:1.4s">You are the calm in my loudest moments, the reason I smile at my phone, and the <em>warmest light</em> I have ever known.</p>
+  <p class="rv" style="--d:2.1s">So this Diwali, I don’t need a thousand lamps. I just need you beside me.</p>
+</section>
+
+<section class="slide">
+  <h2 class="rv">A small film, made with code</h2>
+  <div class="frame rv" style="--d:.5s">
+    <canvas id="film"></canvas>
+    <div class="ov" id="ov"><button class="btn" id="play">▶ Play our Diwali film</button><p class="sm" style="margin-top:12px">Turn your screen up, it’s 24 seconds</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="deco d1" data-f="l"></div><div class="deco d2" data-f="s"></div>
+  <h2 class="rv">Three wishes for you</h2>
+  <div class="cards">
+    <div class="card rv" style="--d:.4s"><b>May your days be bright</b><p>Like sunflowers, may you always find the sun and turn your face toward it, even on cloudy days.</p></div>
+    <div class="card rv" style="--d:1s"><b>May your heart stay soft</b><p>Like a violet lily at dusk, calm, graceful and quietly beautiful. Never change that.</p></div>
+    <div class="card rv" style="--d:1.6s"><b>May every dream find you</b><p>Every big idea, every late-night hope, every wish you whisper to the sky tonight.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="deco d3" data-f="s"></div><div class="deco d4" data-f="l"></div>
+  <h2 class="rv">Why you are my Diwali</h2>
+  <div class="cards">
+    <div class="card rv" style="--d:.3s"><b>You bring light</b><p>Wherever you walk in, the room feels warmer.</p></div>
+    <div class="card rv" style="--d:.8s"><b>You bring colour</b><p>My life was a sketch. You filled it in with violet, gold and laughter.</p></div>
+    <div class="card rv" style="--d:1.3s"><b>You bring home</b><p>Wherever you are is where I want to be, today and every festival after.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="row rv" style="--d:.1s"><span data-f="s"></span><span data-f="l"></span><span data-f="s"></span></div>
+  <h2 class="rv" style="--d:.6s">Happy Diwali, my love</h2>
+  <p class="rv" style="--d:1.2s">Thank you for being my light, my peace and my favourite person. May this festival fill your life with love, success and endless joy.</p>
+  <p class="rv" style="--d:1.8s">I promise to keep lighting a little lamp for you, every single day.</p>
+  <div class="sign rv" style="--d:2.4s">Forever yours, <span id="from"></span> ❤</div>
+  <button class="btn rv" style="--d:2.9s" onclick="for(let i=0;i<7;i++)setTimeout(()=>sky(),i*280)">Light up the sky 🎆</button>
+  <p class="sm rv" style="--d:3.3s">Tap anywhere for fireworks</p>
+</section>
+
+<div class="nav"><button id="pv" aria-label="Previous">‹</button><div class="dots" id="dots"></div><button id="nx" aria-label="Next">›</button></div>
+
+<script>
+/* Edit these two names, then you are done */
+const NAME="My Love", FROM="Haryesh";
+
+document.querySelectorAll('[data-name]').forEach(e=>e.textContent=NAME);
+document.getElementById('from').textContent=FROM;
+
+/* ---------- flowers (SVG) ---------- */
+let gid=0;
+function sunflower(){const id='g'+gid++;let p='';for(let i=0;i<24;i++)p+=`<ellipse cx="100" cy="40" rx="11" ry="35" transform="rotate(${i*15} 100 100)" fill="${i%2?'#ffb703':'#ffd84d'}"/>`;
+let s='';for(let i=0;i<30;i++){const a=i*2.4,r=4+i*.85;s+=`<circle cx="${100+Math.cos(a)*r}" cy="${100+Math.sin(a)*r}" r="2" fill="#2b1206" opacity=".7"/>`}
+return `<svg class="fl" viewBox="0 0 200 200"><defs><radialGradient id="${id}"><stop offset="0" stop-color="#8a4a1a"/><stop offset="1" stop-color="#4a2209"/></radialGradient></defs>${p}<circle cx="100" cy="100" r="33" fill="url(#${id})"/>${s}</svg>`}
+function lily(){const id='g'+gid++;let p='',st='';for(let i=0;i<6;i++)p+=`<path d="M100 100C68 72 78 22 100 6C122 22 132 72 100 100Z" transform="rotate(${i*60} 100 100)" fill="url(#${id})" opacity=".93"/><path d="M100 98L100 40" stroke="#f5d0fe" stroke-width="1.5" opacity=".6" transform="rotate(${i*60} 100 100)"/>`;
+for(let i=0;i<5;i++){const a=i*72*Math.PI/180;st+=`<line x1="100" y1="100" x2="${100+Math.sin(a)*26}" y2="${100-Math.cos(a)*26}" stroke="#ffc83d" stroke-width="2"/><circle cx="${100+Math.sin(a)*26}" cy="${100-Math.cos(a)*26}" r="4" fill="#ffc83d"/>`}
+return `<svg class="fl lily" viewBox="0 0 200 200" style="animation-delay:-2s"><defs><linearGradient id="${id}" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff1fe"/><stop offset=".4" stop-color="#e879f9"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>${p}${st}</svg>`}
+document.querySelectorAll('[data-f]').forEach(e=>e.innerHTML=e.dataset.f==='s'?sunflower():lily());
+
+/* ---------- slides ---------- */
+const S=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots');let cur=0;
+S.forEach((_,i)=>{const d=document.createElement('i');if(!i)d.className='on';dots.appendChild(d)});
+function go(n){if(n<0||n>=S.length)return;S[cur].classList.remove('on');dots.children[cur].classList.remove('on');cur=n;S[cur].classList.add('on');dots.children[cur].classList.add('on');S[cur].scrollTop=0;if(cur===2)fsize();else if(playing)stopFilm()}
+pv.onclick=()=>go(cur-1);nx.onclick=()=>go(cur+1);
+addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+let tx=0,ty=0;addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(cur+(dx<0?1:-1))},{passive:true});
+
+/* ---------- fireworks engine ---------- */
+class Fx{constructor(c){this.c=c;this.p=[]}
+burst(x,y,h,n=64){for(let i=0;i<n;i++){const a=6.283*i/n,s=1+Math.random()*3.4;this.p.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,h:h+Math.random()*40})}}
+step(){const c=this.c;c.globalCompositeOperation='lighter';this.p=this.p.filter(q=>q.l>0);for(const q of this.p){q.x+=q.vx;q.y+=q.vy;q.vy+=.035;q.vx*=.985;q.l-=.013;c.fillStyle=`hsla(${q.h},100%,66%,${q.l})`;c.beginPath();c.arc(q.x,q.y,2.1,0,7);c.fill()}c.globalCompositeOperation='source-over'}}
+const fxc=document.getElementById('fx'),x=fxc.getContext('2d');let FW,FH,bg;
+const sparks=Array.from({length:46},()=>({x:Math.random(),y:Math.random(),r:Math.random()*2+.6,v:Math.random()*.0005+.0002,t:Math.random()*6,c:Math.random()<.5?'#ffc83d':'#e9d5ff'}));
+function rs(){const d=Math.min(devicePixelRatio||1,2);FW=innerWidth;FH=innerHeight;fxc.width=FW*d;fxc.height=FH*d;x.setTransform(d,0,0,d,0,0);fsize()}
+bg=new Fx(x);
+const hues=[270,45,310,285,50];
+function sky(px,py){bg.burst(px??FW*(.15+Math.random()*.7),py??FH*(.12+Math.random()*.35),hues[Math.random()*5|0])}
+addEventListener('pointerdown',e=>{if(!e.target.closest('button'))sky(e.clientX,e.clientY)});
+setInterval(()=>{if(cur!==2&&Math.random()<.7)sky()},1700);
+
+/* ---------- coded film ---------- */
+const fc=document.getElementById('film'),f=fc.getContext('2d'),ov=document.getElementById('ov'),ff=new Fx(f);
+let W=300,H=400,ft=0,playing=false,lastT=0,done=false;
+const stars=Array.from({length:70},()=>({x:Math.random(),y:Math.random()*.7,r:Math.random()*1.4+.3,t:Math.random()*9}));
+const cues=[5.4,6.1,6.8,7.6,8.4,9.3,10.4,11.6,12.8,14,15.2,16.6,18,19.5,21,22.5].map(t=>({t,d:0}));
+const caps=[[.6,4.6,'In a world full of lights…'],[5,9.6,'…you are my brightest one.'],[10,16.4,'Like a sunflower,|I always turn to you.'],[17,23.8,'Happy Diwali, my love']];
+function fsize(){const r=fc.getBoundingClientRect();if(!r.width)return;const d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;fc.width=W*d;fc.height=H*d;f.setTransform(d,0,0,d,0,0)}
+const ez=t=>{t=Math.max(0,Math.min(1,t));return 1-Math.pow(1-t,3)};
+function petals(px,py,R,bl,n,c1,c2,cen,rot,w){for(let i=0;i<n;i++){f.save();f.translate(px,py);f.rotate(i/n*6.283+rot);f.fillStyle=i%2?c1:c2;f.beginPath();f.ellipse(0,-R*.62*bl,R*w*bl,R*.42*bl,0,0,7);f.fill();f.restore()}if(cen){f.fillStyle=cen;f.beginPath();f.arc(px,py,R*.3*bl,0,7);f.fill()}}
+function diya(px,py,s,lit,t){f.fillStyle='#b45309';f.beginPath();f.ellipse(px,py,s,s*.38,0,0,Math.PI);f.fill();f.fillStyle='#f59e0b';f.beginPath();f.ellipse(px,py,s,s*.2,0,0,7);f.fill();
+if(lit>0){const fl=1+Math.sin(ft*14+px)*.12,g=f.createRadialGradient(px,py-s*.9,0,px,py-s*.9,s*3.2*lit);g.addColorStop(0,'rgba(255,214,102,.8)');g.addColorStop(1,'rgba(255,160,0,0)');f.fillStyle=g;f.fillRect(px-s*4,py-s*5,s*8,s*8);
+f.fillStyle='#fff3b0';f.beginPath();f.ellipse(px,py-s*.7,s*.16*fl,s*.55*lit*fl,0,0,7);f.fill()}}
+function draw(t){const g=f.createLinearGradient(0,0,0,H);g.addColorStop(0,'#12002b');g.addColorStop(1,t>10?'#5b21b6':'#3b0f78');f.fillStyle=g;f.fillRect(0,0,W,H);
+for(const s of stars){f.globalAlpha=.4+.6*Math.abs(Math.sin(ft*1.5+s.t));f.fillStyle='#fff';f.beginPath();f.arc(s.x*W,s.y*H,s.r,0,7);f.fill()}f.globalAlpha=1;
+const n=7,ds=Math.min(W/22,18);for(let i=0;i<n;i++)diya(W*(.1+i*.8/(n-1)),H*.93,ds,ez((t-.6-i*.45)/1.2),t);
+for(const c of cues)if(!c.d&&t>=c.t){c.d=1;ff.burst(W*(.18+Math.random()*.64),H*(.12+Math.random()*.32),hues[Math.random()*5|0],70)}
+ff.step();
+const cx=W/2,cy=H*.55,R=Math.min(W,H)*.3;
+const sb=ez((t-10.2)/3.2);if(sb>0){f.save();f.shadowColor='rgba(255,200,61,.7)';f.shadowBlur=30*sb;petals(cx,cy,R,sb,28,'#ffb703','#ffd84d','#5a2a0b',t*.12,.12);f.restore();
+f.fillStyle='rgba(43,18,6,.65)';for(let i=0;i<40;i++){const a=i*2.4,r=R*.04*Math.sqrt(i)*sb;f.beginPath();f.arc(cx+Math.cos(a)*r,cy+Math.sin(a)*r,1.5,0,7);f.fill()}}
+const lb=ez((t-14)/3);if(lb>0)for(const k of[-1,1]){f.save();f.shadowColor='rgba(240,171,252,.8)';f.shadowBlur=24*lb;petals(cx+k*W*.34,H*.7,R*.55,lb,6,'#e879f9','#c4b5fd',null,k*.3+Math.sin(t)*.05,.28);f.fillStyle='#ffc83d';f.beginPath();f.arc(cx+k*W*.34,H*.7,R*.07*lb,0,7);f.fill();f.restore()}
+for(const[a,b,tx]of caps){if(t>=a&&t<=b){const al=Math.min(1,(t-a)/.8,(b-t)/.8);f.globalAlpha=Math.max(0,al);f.fillStyle='#fff7e6';f.textAlign='center';f.shadowColor='#000';f.shadowBlur=14;const fs=Math.max(18,Math.min(W/13,34));f.font=`italic 600 ${fs}px "Playfair Display",Georgia,serif`;
+const ls=tx.split('|'),y0=H*(t>=10&&t<=16.4?.16:.2);ls.forEach((l,i)=>f.fillText(l,cx,y0+i*fs*1.3));f.shadowBlur=0;f.globalAlpha=1}}}
+function stopFilm(){playing=false}
+function startFilm(){ft=0;done=false;cues.forEach(c=>c.d=0);ff.p=[];playing=true;ov.classList.add('h')}
+play.onclick=startFilm;
+function loop(now){const dt=Math.min(.05,(now-lastT)/1000||0);lastT=now;
+x.clearRect(0,0,FW,FH);for(const s of sparks){s.y-=s.v*16;if(s.y<-.02)s.y=1.02;x.globalAlpha=.25+.5*Math.abs(Math.sin(now/700+s.t));x.fillStyle=s.c;x.beginPath();x.arc(s.x*FW,s.y*FH,s.r,0,7);x.fill()}x.globalAlpha=1;bg.step();
+if(cur===2){if(playing){ft+=dt;if(ft>=24.5){playing=false;done=true;ov.classList.remove('h');play.textContent='↻ Watch again'}}if(playing||done||ft===0)draw(done?24:ft)}
+requestAnimationFrame(loop)}
+addEventListener('resize',rs);rs();requestAnimationFrame(loop);
+setTimeout(()=>{sky();setTimeout(()=>sky(),500)},900);
+</script>
+</body>
+</html>
